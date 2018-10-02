@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: oauth2withspringboot
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        show_sql: true
+        use_sql_comments: true
+        format_sql: true
+        type: trace
+
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/application_dev
+    username: app_dev
+    password: app_dev
+    driver-class-name: org.postgresql.Driver
+
+  security:
+    user:
+      roles: ROLE_ADMIN, ROLE_USER
+      name: admin
+      password: admin
+
+#logging:
+#  level:
+#    org.springframework.web: DEBUG
+#    org.hibernate: DEBUG
+#    org.hibernate.SQL: DEBUG
+#    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
+  liquibase:
+    change-log: classpath:/changelog/db.liquibase-changelog.xml
+    user: app_migrations
+    password: app_migrations
+    url: jdbc:postgresql://127.0.0.1:5432/application_dev
+
