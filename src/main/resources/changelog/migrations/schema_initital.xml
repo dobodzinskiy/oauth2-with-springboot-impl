@@ -1,4 +1,4 @@
-<changeset author="denisobodzinskiy@dataart.com" id="1">
+<changeSet author="denisobodzinskiy@dataart.com" id="1">
     <sql>
       CREATE TABLE OAUTH_CLIENT_DETAILS (
         CLIENT_ID VARCHAR(255) PRIMARY KEY,
@@ -52,4 +52,4 @@
         LASTMODIFIEDAT TIMESTAMP
       );
     </sql>
-</changeset>
+</changeSet>
