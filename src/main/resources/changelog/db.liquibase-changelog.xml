@@ -1,7 +1,9 @@
-<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-    <include file="migrations/v1.0/oauth2_initial.xml" relativeToChangelogFile="true"/>
-    <include file="migrations/v1.0/oauth2_insert_authentication.xml" relativeToChangelogFile="true"/>
-
+    <include file="migrations/initial.xml" relativeToChangelogFile="true"/>
+    <!--<include file="migrations/authentication.xml" relativeToChangelogFile="true"/>-->
 </databaseChangeLog>

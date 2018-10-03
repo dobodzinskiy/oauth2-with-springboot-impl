@@ -20,22 +20,23 @@ spring:
     password: app_dev
     driver-class-name: org.postgresql.Driver
 
+  liquibase:
+    url: jdbc:postgresql://127.0.0.1:5432/application_dev
+    change-log: classpath:/changelog/db.liquibase-changelog.xml
+    user: app_migrations
+    password: app_migrations
+    enabled: false
+
   security:
     user:
       roles: ROLE_ADMIN, ROLE_USER
       name: admin
       password: admin
 
-#logging:
-#  level:
-#    org.springframework.web: DEBUG
-#    org.hibernate: DEBUG
-#    org.hibernate.SQL: DEBUG
-#    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
-
-  liquibase:
-    change-log: classpath:/changelog/db.liquibase-changelog.xml
-    user: app_migrations
-    password: app_migrations
-    url: jdbc:postgresql://127.0.0.1:5432/application_dev
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.hibernate: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
 
