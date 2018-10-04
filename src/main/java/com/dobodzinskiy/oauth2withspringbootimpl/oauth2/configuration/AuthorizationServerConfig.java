@@ -26,15 +26,15 @@ import javax.sql.DataSource;
 @Import(ServerSecurityConfig.class)
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
-    @Qualifier("dataSource")
     @Autowired
+    @Qualifier("dataSource")
     private DataSource dataSource;
 
     @Autowired
     private AuthenticationManager authenticationManager;
 
-    @Qualifier("userDetailsServiceImpl")
     @Autowired
+    @Qualifier("userDetailsServiceImpl")
     private UserDetailsService userDetailsService;
 
     @Autowired

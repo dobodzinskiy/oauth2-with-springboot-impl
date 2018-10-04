@@ -1,6 +1,13 @@
-<changeSet author="denisobodzinskiy@dataart.com" id="1">
-    <sql>
-      CREATE TABLE OAUTH_CLIENT_DETAILS (
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet author="denisobodzinskiy" id="1">
+        <sql>
+            CREATE TABLE IF NOT EXISTS OAUTH_CLIENT_DETAILS (
         CLIENT_ID VARCHAR(255) PRIMARY KEY,
         RESOURCE_IDS VARCHAR(255),
         CLIENT_SECRET VARCHAR(255),
@@ -14,7 +21,7 @@
         AUTOAPPROVE VARCHAR(255)
       );
 
-      CREATE TABLE OAUTH_CLIENT_TOKEN (
+      CREATE TABLE IF NOT EXISTS OAUTH_CLIENT_TOKEN (
         TOKEN_ID VARCHAR(255),
         TOKEN BYTEA,
         AUTHENTICATION_ID VARCHAR(255) PRIMARY KEY,
@@ -22,7 +29,7 @@
         CLIENT_ID VARCHAR(255)
       );
 
-      CREATE TABLE OAUTH_ACCESS_TOKEN (
+      CREATE TABLE IF NOT EXISTS OAUTH_ACCESS_TOKEN (
         TOKEN_ID VARCHAR(255),
         TOKEN BYTEA,
         AUTHENTICATION_ID VARCHAR(255) PRIMARY KEY,
@@ -32,18 +39,18 @@
         REFRESH_TOKEN VARCHAR(255)
       );
 
-      CREATE TABLE OAUTH_REFRESH_TOKEN (
+      CREATE TABLE IF NOT EXISTS OAUTH_REFRESH_TOKEN (
         TOKEN_ID VARCHAR(255),
         TOKEN BYTEA,
         AUTHENTICATION BYTEA
       );
 
-      CREATE TABLE OAUTH_CODE (
+      CREATE TABLE IF NOT EXISTS OAUTH_CODE (
         CODE VARCHAR(255),
         AUTHENTICATION BYTEA
       );
 
-      CREATE TABLE OAUTH_APPROVALS (
+      CREATE TABLE IF NOT EXISTS OAUTH_APPROVALS (
         USERID VARCHAR(255),
         CLIENTID VARCHAR(255),
         SCOPE VARCHAR(255),
@@ -51,5 +58,6 @@
         EXPIRESAT TIMESTAMP,
         LASTMODIFIEDAT TIMESTAMP
       );
-    </sql>
-</changeSet>
+        </sql>
+    </changeSet>
+</databaseChangeLog>

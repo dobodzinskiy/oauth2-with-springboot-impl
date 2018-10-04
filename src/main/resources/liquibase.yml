@@ -1,0 +1,4 @@
+url: jdbc:postgresql://127.0.0.1:5432/application_dev
+username: app_migrations
+password: app_migrations
+outputChangeLogFile: src/main/resources/db/changelog/liquibase-changeLog.xml

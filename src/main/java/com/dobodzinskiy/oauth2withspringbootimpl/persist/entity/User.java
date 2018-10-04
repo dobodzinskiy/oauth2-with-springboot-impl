@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 @Entity
 @Getter
 @Setter
-@Table(name = "account")
+@Table(name = "user")
 public class User extends MainEntity implements UserDetails {
 
     @Column

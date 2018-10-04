@@ -22,7 +22,7 @@ spring:
 
   liquibase:
     url: jdbc:postgresql://127.0.0.1:5432/application_dev
-    change-log: classpath:/changelog/liquibase-changelog.xml
+    change-log: classpath:/db/changelog/liquibase-changelog.xml
     user: app_migrations
     password: app_migrations
     enabled: true
